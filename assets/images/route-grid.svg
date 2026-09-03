@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" fill="none">
+  <g opacity=".2" stroke="#07518F" stroke-width="1">
+    <path d="M0 150H1440M0 300H1440M0 450H1440M0 600H1440M0 750H1440"/>
+    <path d="M180 0V900M360 0V900M540 0V900M720 0V900M900 0V900M1080 0V900M1260 0V900"/>
+  </g>
+  <path d="M0 748C184 727 267 661 401 672 558 685 635 493 794 532 959 572 1055 320 1215 362 1305 386 1382 252 1440 178" stroke="url(#a)" stroke-width="2" opacity=".7"/>
+  <defs><linearGradient id="a" x1="0" y1="748" x2="1440" y2="178" gradientUnits="userSpaceOnUse"><stop stop-color="#07518F"/><stop offset=".55" stop-color="#219EF0"/><stop offset="1" stop-color="#00C5E8"/></linearGradient></defs>
+</svg>
