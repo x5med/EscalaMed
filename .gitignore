@@ -3,3 +3,6 @@
 # Arquivos-fonte locais; a landing page usa as imagens otimizadas em assets/images/.
 assets/images/Fotos Mentores.zip
 assets/images/Fotos Mentores/
+
+# Documentação de trabalho mantida apenas localmente.
+docs/
