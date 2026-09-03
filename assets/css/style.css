@@ -139,7 +139,7 @@ strong { color: var(--text-primary); }
 
 .hero { position: relative; display: flex; flex-direction: column; min-height: 100vh; padding: calc(var(--header-height) + 80px) 0 0; overflow: hidden; background: linear-gradient(180deg, var(--midnight) 0%, var(--navy) 58%, var(--deep-blue) 100%); }
 .hero-grid { position: absolute; inset: 0; background: url("../images/route-grid.svg") center/cover no-repeat; opacity: 0.32; mask-image: linear-gradient(to bottom, transparent, var(--midnight) 18%, var(--midnight) 68%, transparent); }
-.hero-glow { position: absolute; top: 5%; left: 27%; width: 62vw; height: 62vw; border-radius: 50%; background: radial-gradient(circle, rgba(244,181,64,.22) 0%, rgba(33,158,240,.06) 42%, transparent 70%); filter: blur(50px); transform: translate(-50%, -20%); }
+.hero-glow { position: absolute; top: 10%; left: 50%; width: 90vw; height: 90vw; border-radius: 50%; background: radial-gradient(circle, rgba(244,181,64,.22) 0%, rgba(33,158,240,.06) 42%, transparent 70%); filter: blur(50px); transform: translate(-50%, -20%); }
 .hero-layout { position: relative; z-index: 2; display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr); align-items: center; gap: 5vw; padding-bottom: 86px; }
 .hero-copy { max-width: 780px; }
 .hero h1 { width: min(100%, 780px); margin-bottom: 34px; font-size: clamp(4.25rem, 7.7vw, 7.5rem); }
