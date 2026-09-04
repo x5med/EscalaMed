@@ -422,6 +422,8 @@ h1, h2, h3, h4, p { margin-top: 0; }
   html { scroll-behavior: auto; }
   .container { width: min(calc(100% - 40px), var(--container)); }
   .section { padding: 130px 0; }
+  .site-header, .nav-shell { transition: none; }
+  .site-header.is-scrolled .nav-shell { background: linear-gradient(180deg, rgba(2,8,23,.97), rgba(4,39,70,.94)); box-shadow: inset 0 -1px 0 rgba(145,167,183,.2); backdrop-filter: none; -webkit-backdrop-filter: none; }
   .site-header:not(.is-scrolled) .menu-toggle { border-color: rgba(145,167,183,.38); background: rgba(2,8,23,.56); }
   body.menu-open .site-header:not(.is-scrolled) .menu-toggle { background: var(--navy); }
   .button-ghost { background: rgba(2,8,23,.82); backdrop-filter: none; -webkit-backdrop-filter: none; }
