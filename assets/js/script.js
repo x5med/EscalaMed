@@ -183,62 +183,61 @@ if (!("IntersectionObserver" in window)) {
   counters.forEach((counter) => counterObserver.observe(counter));
 }
 
-const whatsappInput = document.querySelector("#whatsapp");
+function initializeEditorialMotion() {
+  if (prefersReducedMotion || !window.gsap || !window.ScrollTrigger) return;
 
-whatsappInput?.addEventListener("input", (event) => {
-  const digits = event.target.value.replace(/\D/g, "").slice(0, 11);
-  let formatted = digits;
+  const { gsap, ScrollTrigger } = window;
+  gsap.registerPlugin(ScrollTrigger);
 
-  if (digits.length > 2) formatted = `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
-  if (digits.length > 7) formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+  const mentorArt = document.querySelector(".hero-mentor-art");
 
-  event.target.value = formatted;
-});
-
-const leadForm = document.querySelector("#lead-form");
-const successState = document.querySelector("#form-success");
-
-function setFieldError(input, message = "") {
-  const field = input.closest(".field");
-  const error = field?.querySelector("small");
-  field?.classList.toggle("has-error", Boolean(message));
-  input.setAttribute("aria-invalid", String(Boolean(message)));
-  if (error) error.textContent = message;
-}
-
-function validateField(input) {
-  const value = input.value.trim();
-  let message = "";
-
-  if (!value) message = "Preencha este campo.";
-  else if (input.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) message = "Informe um e-mail válido.";
-  else if (input.name === "whatsapp" && value.replace(/\D/g, "").length < 10) message = "Informe um WhatsApp válido.";
-
-  setFieldError(input, message);
-  return !message;
-}
-
-leadForm?.querySelectorAll("input").forEach((input) => {
-  input.addEventListener("blur", () => validateField(input));
-  input.addEventListener("input", () => {
-    if (input.getAttribute("aria-invalid") === "true") validateField(input);
-  });
-});
-
-leadForm?.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const fields = [...leadForm.querySelectorAll("input")];
-  const isValid = fields.map(validateField).every(Boolean);
-
-  if (!isValid) {
-    fields.find((field) => field.getAttribute("aria-invalid") === "true")?.focus();
-    return;
+  if (mentorArt) {
+    gsap.fromTo(mentorArt, { opacity: 0.72, scale: 1.025 }, { opacity: 1, scale: 1, duration: 1.35, ease: "power2.out" });
+    gsap.to(mentorArt, {
+      opacity: 0.38,
+      scale: 1.04,
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".hero",
+        start: "top top",
+        end: "bottom 45%",
+        scrub: true
+      }
+    });
   }
 
-  leadForm.hidden = true;
-  successState.hidden = false;
-  successState.focus();
-});
+  const scrubText = document.querySelector(".scrub-copy > p");
+
+  if (scrubText) {
+    const words = scrubText.textContent.trim().split(/\s+/);
+    const fragment = document.createDocumentFragment();
+
+    words.forEach((word, index) => {
+      const span = document.createElement("span");
+      span.className = "scrub-word";
+      span.textContent = word;
+      fragment.append(span);
+      if (index < words.length - 1) fragment.append(" ");
+    });
+
+    scrubText.replaceChildren(fragment);
+    gsap.set(".scrub-word", { opacity: 0.16 });
+    gsap.to(".scrub-word", {
+      opacity: 1,
+      stagger: 0.045,
+      ease: "none",
+      scrollTrigger: {
+        trigger: scrubText,
+        start: "top 78%",
+        end: "bottom 38%",
+        scrub: true
+      }
+    });
+  }
+
+}
+
+window.addEventListener("load", initializeEditorialMotion, { once: true });
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", (event) => {

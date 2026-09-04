@@ -1,5 +1,9 @@
 .DS_Store
 
+# Backups e arquivos-fonte locais que não fazem parte da publicação.
+/!BACKUP/
+assets/images/bg.png
+
 # Arquivos-fonte locais; a landing page usa as imagens otimizadas em assets/images/.
 assets/images/Fotos Mentores.zip
 assets/images/Fotos Mentores/

@@ -22,6 +22,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
   <script src="assets/js/script.js" defer></script>
 </head>
 <body>
@@ -42,7 +44,7 @@
         <a href="#evento">O Evento</a>
       </nav>
 
-      <a class="button button-small header-cta" href="#inscricao">GARANTIR MINHA VAGA</a>
+      <a class="button button-small header-cta" href="#inscricao" data-metrics-cta>GARANTIR MINHA VAGA</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
         <span></span><span></span>
       </button>
@@ -56,60 +58,36 @@
         <a href="#experiencia">A Experiência</a>
         <a href="#equipe">Quem Somos</a>
         <a href="#evento">O Evento</a>
-        <a class="button" href="#inscricao">GARANTIR MINHA VAGA</a>
+        <a class="button" href="#inscricao" data-metrics-cta>GARANTIR MINHA VAGA</a>
       </nav>
     </div>
   </header>
 
   <main id="conteudo">
     <section class="hero" id="inicio">
-      <div class="hero-grid" aria-hidden="true"></div>
-      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="hero-mentor-art" role="img" aria-label="Grupo de mentores em um palco de evento"></div>
       <div class="container hero-layout">
         <div class="hero-copy reveal">
-          <p class="eyebrow">EVENTO PRESENCIAL · 100 VAGAS · ALPHAVILLE-SP · NOVEMBRO</p>
+          <div class="hero-event-meta" aria-label="Informações do evento">
+            <span><strong>27, 28 e 29</strong> de novembro</span>
+            <span>Alphaville — SP</span>
+            <span>100 vagas presenciais</span>
+          </div>
           <h1><span>EscalaMED</span><em>A Rota do Crescimento</em></h1>
           <p class="hero-lead">Um caminho prático para dobrar o faturamento da sua clínica, melhorar a lucratividade e construir o próximo nível do seu negócio.</p>
           <div class="hero-actions">
-            <a class="button" href="#inscricao">GARANTIR MINHA VAGA</a>
+            <a class="button" href="#inscricao" data-metrics-cta>GARANTIR MINHA VAGA</a>
             <a class="button button-ghost" href="#ideia">Conhecer a Rota</a>
           </div>
-        </div>
-
-        <div class="hero-visual reveal" aria-hidden="true">
-          <div class="orbit orbit-one"></div>
-          <div class="orbit orbit-two"></div>
-          <div class="route-card">
-            <div class="route-card-top"><span>A Rota do Crescimento</span><i></i></div>
-            <svg viewBox="0 0 560 330" role="img" aria-label="Gráfico abstrato de crescimento">
-              <defs>
-                <linearGradient id="lineGradient" x1="0" y1="1" x2="1" y2="0">
-                  <stop offset="0" stop-color="#07518F"/>
-                  <stop offset=".55" stop-color="#219EF0"/>
-                  <stop offset="1" stop-color="#00C5E8"/>
-                </linearGradient>
-                <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0" stop-color="#219EF0" stop-opacity=".24"/>
-                  <stop offset="1" stop-color="#00C5E8" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <g class="chart-grid">
-                <path d="M30 70H530M30 130H530M30 190H530M30 250H530"/>
-                <path d="M95 30V290M195 30V290M295 30V290M395 30V290M495 30V290"/>
-              </g>
-              <path class="chart-area" d="M35 260C95 252 105 220 155 224S228 180 275 190 345 127 390 139 449 76 525 54V290H35Z"/>
-              <path class="chart-line" d="M35 260C95 252 105 220 155 224S228 180 275 190 345 127 390 139 449 76 525 54"/>
-              <circle cx="525" cy="54" r="6"/>
-            </svg>
-            <div class="route-card-foot"><span>Mentalidade Empresarial</span><span>Atração</span><span>Conversão</span><span>Expansão</span></div>
-          </div>
+          <p class="scarcity-note">Sua inscrição está reservada. Sua cadeira, não.</p>
         </div>
       </div>
 
-      <div class="container trust-strip reveal-group">
-        <div class="trust-item reveal"><strong class="counter" data-value="100">0</strong><span>vagas</span></div>
-        <div class="trust-item reveal"><strong class="counter" data-value="100" data-suffix="%">0</strong><span>presencial</span></div>
-        <div class="trust-item reveal"><strong>Novembro</strong><span>Alphaville — SP</span></div>
+      <div class="scarcity-marquee" aria-label="27, 28 e 29 de novembro, em Alphaville, com 100 vagas presenciais">
+        <div class="scarcity-marquee-track">
+          <span>27, 28 e 29 de novembro</span><i></i><span>Alphaville — SP</span><i></i><span>100 vagas presenciais</span><i></i><span>Convite exclusivo</span><i></i>
+          <span aria-hidden="true">27, 28 e 29 de novembro</span><i aria-hidden="true"></i><span aria-hidden="true">Alphaville — SP</span><i aria-hidden="true"></i><span aria-hidden="true">100 vagas presenciais</span><i aria-hidden="true"></i><span aria-hidden="true">Convite exclusivo</span><i aria-hidden="true"></i>
+        </div>
       </div>
     </section>
 
@@ -235,7 +213,7 @@
 
     <section class="section experience" id="experiencia">
       <div class="container">
-        <div class="section-heading reveal"><p class="eyebrow">A EXPERIÊNCIA ESCALAMED</p><h2>A Experiência EscalaMED</h2></div>
+        <div class="section-heading reveal"><h2>A Experiência EscalaMED</h2></div>
         <div class="event-specs reveal-group">
           <div class="reveal"><strong>100 participantes</strong></div><div class="reveal"><strong>Presencial</strong></div><div class="reveal"><strong>Alphaville — SP</strong></div><div class="reveal"><strong>Novembro</strong></div>
         </div>
@@ -295,14 +273,52 @@
     </section>
 
     <section class="section team" id="equipe">
-      <div class="container">
-        <div class="section-heading reveal"><p class="eyebrow">QUEM ESTÁ POR TRÁS DESSA ROTA</p><h2>Quem Está Por Trás Dessa Rota</h2></div>
+      <div class="container team-layout">
+        <div class="section-heading team-heading reveal">
+          <p class="eyebrow">QUEM ESTÁ POR TRÁS DESSA ROTA</p>
+          <h2>Quem Está Por Trás <span class="inline-portraits" aria-hidden="true"><img src="assets/images/img-fabio.webp" alt=""><img src="assets/images/img-patricia.webp" alt=""><img src="assets/images/img-vital.webp" alt=""></span> Dessa Rota</h2>
+        </div>
         <div class="team-grid reveal-group">
-          <article class="team-card reveal"><img class="avatar" src="assets/images/img-fabio.webp" alt="Fábio Rodrigues" loading="lazy" decoding="async"><h3>Fábio Rodrigues</h3><p class="role">Médico cirurgião, empresário e gestão.</p><p>Participou diretamente da construção e do crescimento das clínicas e hoje atua sobre o desafio de transformar crescimento em estrutura empresarial.</p></article>
-          <article class="team-card reveal"><img class="avatar" src="assets/images/img-patricia.webp" alt="Patrícia Santiago" loading="lazy" decoding="async"><h3>Patrícia Santiago</h3><p class="role">Experiência do cliente e vendas.</p><p>Esteve diretamente na linha de frente comercial durante a construção do case de Manaus e traz a visão de experiência, jornada, percepção de valor e conversão.</p></article>
-          <article class="team-card reveal"><img class="avatar" src="assets/images/img-vital.webp" alt="Vital Araújo" loading="lazy" decoding="async"><h3>Vital Araújo</h3><p class="role">Vendas e Mentalidade Empresarial.</p><p>Além da atuação na X5 MED, vive atualmente, ao lado de Tainara, o processo de estruturação de uma nova clínica em Sergipe.</p></article>
-          <article class="team-card reveal"><img class="avatar" src="assets/images/img-tainara.webp" alt="Tainara" loading="lazy" decoding="async"><h3>Tainara</h3><p class="role">Médica dermatologista, empresária e posicionamento.</p><p>Traz a visão de autoridade, diferenciação e percepção de valor enquanto participa da construção da nova operação em Sergipe.</p></article>
-          <article class="team-card team-card-wide reveal"><img class="avatar" src="assets/images/img-patricio.webp" alt="Patrício Darvisson" loading="lazy" decoding="async"><h3>Patrício Darvisson</h3><p class="role">Empresário e visão empresarial sem o viés da medicina.</p><p>Com participação em mais de 30 negócios, atuando, de acordo com cada empresa, como fundador, sócio, investidor ou gestor. Sua presença traz um contraponto importante: <em>“Se isso fosse qualquer outra empresa, administraríamos o negócio dessa mesma maneira?”</em></p></article>
+          <article class="team-card reveal">
+            <img class="avatar" src="assets/images/img-fabio.webp" alt="Fábio Rodrigues" loading="lazy" decoding="async">
+            <div class="mentor-identity"><h3>Fábio Rodrigues</h3><p class="role">Médico cirurgião, empresário e gestão.</p></div>
+            <div class="mentor-story">
+              <p>Formado em 2002, o Dr. Fábio tem uma carreira consolidada com duas residências (Cirurgia Geral e Aparelho Digestivo) e milhares de cirurgias bariátricas realizadas. Além da atuação técnica, atuou por cerca de 8 anos como Diretor Clínico e Técnico de um grande hospital em Manaus, onde aprofundou sua paixão e visão sobre a gestão de negócios.</p>
+              <details><summary>Conheça a trajetória completa <span aria-hidden="true">+</span></summary><div class="mentor-more"><p>Buscando se libertar da dependência de plantões e hospitais, fundou em 2018 sua primeira clínica. Em 2022, lançou uma segunda clínica focada no mercado High Ticket, acelerando o faturamento do zero a R$ 1 milhão em cerca de um ano.</p><p>Hoje, suas clínicas operam com sucesso à distância, o que permitiu sua mudança para Alphaville. Ele ensina na prática a implementar processos e metodologias para que o médico conquiste a mesma previsibilidade e autonomia em sua carreira.</p></div></details>
+            </div>
+          </article>
+          <article class="team-card reveal">
+            <img class="avatar" src="assets/images/img-vital.webp" alt="Vital Araújo" loading="lazy" decoding="async">
+            <div class="mentor-identity"><h3>Vital Araújo</h3><p class="role">Médico Empresário</p></div>
+            <div class="mentor-story">
+              <p>Formado muito jovem pela Universidade Federal da Bahia (UFBA), Dr. Vital vivenciou os desafios iniciais da carreira médica sem referências na família. Aos 24 anos, tornou-se Diretor Médico de um hospital regional, experiência que despertou seu lado de liderança e gestão. Especializou-se na área integrativa, ortomolecular e emagrecimento. Ao se mudar para Petrolina (PE), tornou-se referência nacional, palestrando em congressos e expandindo atendimentos para grandes capitais.</p>
+              <details><summary>Conheça a trajetória completa <span aria-hidden="true">+</span></summary><div class="mentor-more"><p>No auge do sucesso financeiro, percebeu que havia se tornado escravo do próprio consultório ao trabalhar até 15 horas por dia. Ele orienta como criar uma estrutura com gestão eficiente, processos bem definidos e liberdade de tempo.</p></div></details>
+            </div>
+          </article>
+          <article class="team-card reveal">
+            <img class="avatar" src="assets/images/img-patricia.webp" alt="Patrícia Santiago" loading="lazy" decoding="async">
+            <div class="mentor-identity"><h3>Patrícia Santiago</h3><p class="role">Médica, Empresária e Case de Sucesso em Gestão à Distância</p></div>
+            <div class="mentor-story">
+              <p>Médica e empresária, a Dra. Patrícia viveu durante anos a realidade de muitos profissionais da saúde: exaustão por plantões exaustivos e falta de tempo com a família. A grande virada de chave aconteceu ao compreender que precisava mudar sua mentalidade de médica técnica para gestora.</p>
+              <details><summary>Conheça a trajetória completa <span aria-hidden="true">+</span></summary><div class="mentor-more"><p>De uma única unidade, expandiu os negócios para três clínicas de sucesso. Duas dessas clínicas funcionam em Manaus (AM) com gestão 100% à distância, enquanto ela reside em São Paulo. Como ela mesma define, é uma “sócia e case real do método”. Ela traz a vivência prática de quem superou a rotina exaustiva de plantões para alcançar liberdade geográfica, financeira e tempo de qualidade com a família. Seu foco é ensinar como transformar o consultório/clínica em uma estrutura profissional sustentável.</p></div></details>
+            </div>
+          </article>
+          <article class="team-card reveal">
+            <img class="avatar" src="assets/images/img-patricio.webp" alt="Patrício Darvisson" loading="lazy" decoding="async">
+            <div class="mentor-identity"><h3>Patrício Darvisson</h3><p class="role">Estrategista de Negócios e Especialista em Crescimento Exponencial</p></div>
+            <div class="mentor-story">
+              <p>Empresário há 20 anos, especialista em Marketing e estrategista de negócios com experiência no comando e estruturação de mais de 30 empresas.</p>
+              <details><summary>Conheça a trajetória completa <span aria-hidden="true">+</span></summary><div class="mentor-more"><p>Sua experiência engloba desde a reestruturação até o planejamento estratégico focado em crescimento exponencial. Traz a visão de mercado puramente empresarial para ensinar aos médicos como definir e atrair seus clientes ideais, criar posicionamento de mercado e implementar um planejamento estratégico sólido para que a clínica cresça com alta rentabilidade.</p></div></details>
+            </div>
+          </article>
+          <article class="team-card reveal">
+            <img class="avatar" src="assets/images/img-tainara.webp" alt="Tainara Carvalho" loading="lazy" decoding="async">
+            <div class="mentor-identity"><h3>Tainara Carvalho</h3><p class="role">Médica Dermatologista, Empresária e Co-idealizadora da X5 Med</p></div>
+            <div class="mentor-story">
+              <p>Formada em Medicina pela Universidade Federal da Bahia (UFBA), foi a primeira médica de sua família. Atua no mercado particular na área de Dermatologia.</p>
+              <details><summary>Conheça a trajetória completa <span aria-hidden="true">+</span></summary><div class="mentor-more"><p>Enfrentou de perto os desafios do mercado tradicional: a criação de PJ, o cansaço dos plantões no PSF, a perda de momentos em família e a dificuldade inicial de atrair e fidelizar clientes particulares no consultório. A Dra. Tainara virou a chave para o modelo de “médico empresário” e utiliza sua trajetória para guiar outros profissionais na superação dos altos e baixos do consultório privado. Seu propósito dentro da mentoria é gerar transformação, levando prosperidade e paz para a carreira e família dos médicos participantes.</p></div></details>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -341,14 +357,13 @@
       <div class="container">
         <p class="eyebrow reveal">MODELO DO EVENTO</p>
         <div class="event-card reveal">
-          <div class="event-card-copy"><span>EscalaMED · Alphaville — São Paulo</span><h2>100 vagas presenciais</h2><strong>Participação sem custo</strong></div>
+          <div class="event-card-copy"><span>EscalaMED · Alphaville — São Paulo</span><h2>100 vagas presenciais</h2><p class="event-value">Uma experiência de alto valor, acesso exclusivo mediante candidatura e uma exigência: compromisso com o próximo nível.</p></div>
           <dl>
             <div><dt>Confirmação</dt><dd>Inscrição + confirmação pela equipe X5 MED</dd></div>
             <div><dt>Local</dt><dd>Alphaville — São Paulo</dd></div>
-            <div><dt>Mês</dt><dd>Novembro</dd></div>
-            <div><dt>Data</dt><dd>27, 28 e 29</dd></div>
+            <div><dt>Data</dt><dd>27, 28 e 29 de novembro</dd></div>
           </dl>
-          <a class="button button-wide" href="#inscricao">QUERO GARANTIR MINHA VAGA</a>
+          <a class="button button-wide" href="#inscricao" data-metrics-cta>QUERO GARANTIR MINHA VAGA</a>
         </div>
       </div>
     </section>
@@ -372,23 +387,19 @@
       <div class="final-glow" aria-hidden="true"></div>
       <div class="container final-grid">
         <div class="final-copy reveal">
-          <p class="eyebrow">ESCALAMED · A ROTA DO CRESCIMENTO</p>
-          <h2>EscalaMED <em>A Rota do Crescimento</em></h2>
-          <p>Um caminho prático para dobrar o faturamento da sua clínica, melhorar a lucratividade e construir o próximo nível do seu negócio.</p>
+          <p class="eyebrow">CANDIDATURA ESCALAMED</p>
+          <h2>Candidate-se para uma <em>Vaga Exclusiva</em></h2>
+          <p>O preenchimento deste formulário garante sua participação em nosso processo seletivo.</p>
         </div>
-        <div class="form-panel reveal">
-          <form id="lead-form" novalidate>
-            <div class="field"><label for="name">Nome completo</label><input id="name" name="name" type="text" autocomplete="name" required><small></small></div>
-            <div class="field"><label for="whatsapp">WhatsApp</label><input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required><small></small></div>
-            <div class="field"><label for="email">E-mail</label><input id="email" name="email" type="email" autocomplete="email" required><small></small></div>
-            <div class="field"><label for="clinic">Nome da clínica</label><input id="clinic" name="clinic" type="text" autocomplete="organization" required><small></small></div>
-            <button class="button button-wide" type="submit">GARANTIR MINHA VAGA</button>
-          </form>
-          <div class="form-success" id="form-success" role="status" tabindex="-1" hidden>
-            <svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="20"/><path d="m15 24 6 6 12-13"/></svg>
-            <p>Recebemos seu interesse — nossa equipe entrará em contato para confirmar sua vaga.</p>
-          </div>
-        </div>
+        <aside class="application-panel reveal" aria-label="Processo de candidatura">
+          <p class="application-kicker">Convite exclusivo e intransferível</p>
+          <p>Como o número de vagas é altamente limitado e há outros candidatos concorrendo, sua aplicação passará por uma análise criteriosa da nossa equipe.</p>
+          <p>Caso o seu perfil seja aprovado, você receberá um convite exclusivo e intransferível para ter acesso à oportunidade.</p>
+          <p>Buscamos pessoas comprometidas e dispostas a aproveitar ao máximo esse privilégio. Preencha seus dados com atenção.</p>
+          <div class="application-capacity"><span>100</span><p>cadeiras presenciais<br>em Alphaville</p></div>
+          <!-- Substituir o destino abaixo pela URL externa do Metrics quando ela for fornecida. -->
+          <a class="button button-wide" href="#inscricao" data-metrics-cta>GARANTIR MINHA VAGA</a>
+        </aside>
       </div>
     </section>
   </main>
