@@ -240,6 +240,46 @@ window.addEventListener("DOMContentLoaded", () => {
     requestJourneyUpdate();
   }
 
+  const whatsappInput = document.querySelector("#whatsapp");
+  whatsappInput?.addEventListener("input", (event) => {
+    const digits = event.target.value.replace(/\D/g, "").slice(0, 11);
+    let formatted = digits;
+
+    if (digits.length > 2) formatted = `(${digits.slice(0, 2)}) ${digits.slice(2)}`;
+    if (digits.length > 7) formatted = `(${digits.slice(0, 2)}) ${digits.slice(2, 7)}-${digits.slice(7)}`;
+    event.target.value = formatted;
+  });
+
+  const leadForm = document.querySelector("#lead-form");
+  const setFieldError = (input, message = "") => {
+    const field = input.closest(".field");
+    const error = field?.querySelector("small");
+    field?.classList.toggle("has-error", Boolean(message));
+    input.setAttribute("aria-invalid", String(Boolean(message)));
+    if (error) error.textContent = message;
+  };
+
+  const validateField = (input) => {
+    const value = input.value.trim();
+    let message = "";
+
+    if (!value) message = "Preencha este campo.";
+    else if (input.type === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) message = "Informe um e-mail válido.";
+    else if (input.name === "whatsapp" && value.replace(/\D/g, "").length < 10) message = "Informe um WhatsApp válido.";
+
+    setFieldError(input, message);
+    return !message;
+  };
+
+  leadForm?.querySelectorAll("input").forEach((input) => {
+    input.addEventListener("blur", () => validateField(input));
+    input.addEventListener("input", () => {
+      if (input.getAttribute("aria-invalid") === "true") validateField(input);
+    });
+  });
+
+  leadForm?.addEventListener("submit", (event) => event.preventDefault());
+
   if (!window.gsap || !window.ScrollTrigger) return;
 
   const { gsap, ScrollTrigger } = window;
