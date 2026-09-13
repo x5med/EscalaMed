@@ -134,6 +134,112 @@ window.addEventListener("DOMContentLoaded", () => {
     authorityScrub?.classList.add("is-readable");
   }
 
+  const formatCounterValue = (value, format, suffix = "") => {
+    if (format === "compact") {
+      if (value >= 1000000) {
+        const amount = value / 1000000;
+        const label = amount === 1 ? "milhão" : "milhões";
+        return `${amount.toLocaleString("pt-BR", { maximumFractionDigits: 1 })} ${label}`;
+      }
+      if (value >= 1000) return `${Math.round(value / 1000).toLocaleString("pt-BR")} mil`;
+    }
+    return `${Math.round(value).toLocaleString("pt-BR")}${suffix}`;
+  };
+
+  const animateCounter = (element) => {
+    if (element.dataset.counted === "true") return;
+    element.dataset.counted = "true";
+
+    const target = Number(element.dataset.value || 0);
+    const format = element.dataset.format || "number";
+    const suffix = element.dataset.suffix || "";
+
+    if (reducedMotion) {
+      element.textContent = formatCounterValue(target, format, suffix);
+      return;
+    }
+
+    const duration = 1450;
+    const start = performance.now();
+    const update = (timestamp) => {
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      element.textContent = formatCounterValue(target * eased, format, progress === 1 ? suffix : "");
+      if (progress < 1) window.requestAnimationFrame(update);
+    };
+    window.requestAnimationFrame(update);
+  };
+
+  const counters = document.querySelectorAll("[data-counter]");
+  if ("IntersectionObserver" in window) {
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        animateCounter(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: .45, rootMargin: "0px 0px -8%" });
+    counters.forEach((counter) => counterObserver.observe(counter));
+  } else {
+    counters.forEach(animateCounter);
+  }
+
+  const journeyTrack = document.querySelector(".journey-track");
+  if (journeyTrack) {
+    const stations = [...journeyTrack.querySelectorAll(".journey-station")];
+    let journeyVisible = false;
+    let journeyTicking = false;
+
+    const updateJourneyProgress = () => {
+      const compact = window.matchMedia("(max-width: 900px)").matches;
+      const trigger = window.innerHeight * .68;
+      let progress = 0;
+
+      if (reducedMotion) {
+        progress = 1;
+      } else if (compact && stations.length > 1) {
+        const first = stations[0].querySelector(".station-marker").getBoundingClientRect();
+        const last = stations[stations.length - 1].querySelector(".station-marker").getBoundingClientRect();
+        const start = first.top + first.height / 2;
+        const end = last.top + last.height / 2;
+        progress = (trigger - start) / Math.max(end - start, 1);
+      } else {
+        const rect = journeyTrack.getBoundingClientRect();
+        progress = (trigger - rect.top) / Math.max(rect.height, 1);
+      }
+
+      progress = Math.min(Math.max(progress, 0), 1);
+      journeyTrack.style.setProperty("--journey-progress", progress.toFixed(4));
+      stations.forEach((station, index) => {
+        const threshold = index === 0 ? .015 : index / Math.max(stations.length - 1, 1);
+        station.classList.toggle("is-reached", progress >= threshold);
+      });
+      journeyTicking = false;
+    };
+
+    const requestJourneyUpdate = () => {
+      if (journeyTicking) return;
+      journeyTicking = true;
+      window.requestAnimationFrame(updateJourneyProgress);
+    };
+
+    if ("IntersectionObserver" in window) {
+      const journeyObserver = new IntersectionObserver(([entry]) => {
+        journeyVisible = entry.isIntersecting;
+        requestJourneyUpdate();
+      }, { rootMargin: "20% 0px 20%" });
+      journeyObserver.observe(journeyTrack);
+    } else {
+      journeyVisible = true;
+    }
+
+    window.addEventListener("scroll", () => {
+      if (journeyVisible) requestJourneyUpdate();
+    }, { passive: true });
+    window.addEventListener("resize", requestJourneyUpdate, { passive: true });
+    requestJourneyUpdate();
+  }
+
   if (!window.gsap || !window.ScrollTrigger) return;
 
   const { gsap, ScrollTrigger } = window;
@@ -258,12 +364,6 @@ window.addEventListener("DOMContentLoaded", () => {
     stagger: .08,
     ease: "power3.out",
     scrollTrigger: { trigger: ".experience-specs", start: "top 80%", once: true }
-  });
-
-  gsap.to(".journey-progress", {
-    scaleX: 1,
-    ease: "none",
-    scrollTrigger: { trigger: ".journey-track", start: "top 76%", end: "bottom 58%", scrub: true }
   });
 
   gsap.from(".journey-station", {

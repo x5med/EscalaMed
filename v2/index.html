@@ -17,10 +17,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&amp;family=Sora:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=2.4.8">
+  <link rel="stylesheet" href="assets/css/style.css?v=2.5.0">
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
-  <script src="assets/js/script.js?v=2.4.8" defer></script>
+  <script src="assets/js/script.js?v=2.5.0" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
@@ -335,9 +335,9 @@
 
           <aside class="case-meter" aria-label="Comparação do faturamento mensal da clínica">
             <div class="proof-card-head"><span>O crescimento revelou o gargalo</span><i aria-hidden="true"></i></div>
-            <div class="proof-metric proof-metric-high"><span>Com presença direta</span><strong><small>R$</small> 1 milhão</strong><p>por mês</p></div>
+            <div class="proof-metric proof-metric-high"><span>Com presença direta</span><strong><small>R$</small> <span data-counter data-value="1000000" data-format="compact">0</span></strong><p>por mês</p></div>
             <div class="meter-route" aria-hidden="true"><i></i><span></span><i></i></div>
-            <div class="proof-metric"><span>Sem a linha de frente</span><strong><small>R$</small> 400 mil</strong><p>por mês</p></div>
+            <div class="proof-metric"><span>Sem a linha de frente</span><strong><small>R$</small> <span data-counter data-value="400000" data-format="compact">0</span></strong><p>por mês</p></div>
           </aside>
 
           <article class="proof-turn">
@@ -356,7 +356,14 @@
         <div class="operation-manifest">
           <p>Não ensinamos a partir de uma empresa perfeita.</p>
           <h3>Ensinamos a partir de empresas reais.</h3>
-          <div><span>Empresas que crescem.</span><span>Que encontram gargalos.</span><span>Que precisam rever decisões.</span><span>Que testam estratégias.</span><span>Que estruturam pessoas e processos.</span><span>E que continuam buscando o próximo nível.</span></div>
+          <div>
+            <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>Empresas que crescem.</span>
+            <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>Que encontram gargalos.</span>
+            <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>Que precisam rever decisões.</span>
+            <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>Que testam estratégias.</span>
+            <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>Que estruturam pessoas e processos.</span>
+            <span><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 17 17 7M9 7h8v8"/></svg>E que continuam buscando o próximo nível.</span>
+          </div>
           <p>Porque crescer uma vez é um desafio. <strong>Construir uma empresa capaz de sustentar o crescimento é outro.</strong></p>
         </div>
       </div>
@@ -382,7 +389,7 @@
       <div class="mentor-viewport" data-rail-viewport="mentors">
         <div class="mentor-track">
           <article class="mentor-card">
-            <div class="mentor-photo"><img src="../assets/images/img-fabio.webp" alt="Fábio Rodrigues" loading="lazy" decoding="async"></div>
+            <div class="mentor-photo mentor-photo--fabio"><img src="../assets/images/img-fabio-mentor.webp" alt="Fábio Rodrigues" loading="lazy" decoding="async"></div>
             <div class="mentor-copy">
               <div><span>Cirurgia e gestão</span><h3>Fábio Rodrigues</h3><p class="mentor-role">Médico cirurgião, empresário e gestão.</p></div>
               <p>Formado em 2002, o Dr. Fábio tem duas residências, milhares de cirurgias bariátricas realizadas e cerca de oito anos de atuação como Diretor Clínico e Técnico de um grande hospital em Manaus.</p>
@@ -439,9 +446,9 @@
         </div>
 
         <div class="authority-stats">
-          <div class="authority-stat"><strong>2+</strong><span>anos de mercado</span></div>
-          <div class="authority-stat"><strong>100+</strong><span>médicos mentorados</span></div>
-          <div class="authority-stat"><strong>4</strong><span>pilares aplicados</span></div>
+          <div class="authority-stat"><strong data-counter data-value="2" data-suffix="+">0</strong><span>anos de mercado</span></div>
+          <div class="authority-stat"><strong data-counter data-value="100" data-suffix="+">0</strong><span>médicos mentorados</span></div>
+          <div class="authority-stat"><strong data-counter data-value="4">0</strong><span>pilares aplicados</span></div>
         </div>
 
         <div class="testimonials-heading">
@@ -476,12 +483,30 @@
         <span class="button" aria-disabled="true">Quero garantir minha vaga</span>
       </div>
     </section>
+
+    <section class="application section" id="inscricao">
+      <div class="application-glow" aria-hidden="true"></div>
+      <div class="container application-grid">
+        <div class="application-copy">
+          <p class="kicker">Candidatura EscalaMED</p>
+          <h2>Candidate-se para uma <em>Vaga Exclusiva</em></h2>
+          <p>O preenchimento deste formulário garante sua participação em nosso processo seletivo.</p>
+        </div>
+        <aside class="application-panel" aria-label="Processo de candidatura">
+          <p class="application-kicker">Convite exclusivo e intransferível</p>
+          <p>Como o número de vagas é altamente limitado e há outros candidatos concorrendo, sua aplicação passará por uma análise criteriosa da nossa equipe.</p>
+          <p>Caso o seu perfil seja aprovado, você receberá um convite exclusivo e intransferível para ter acesso à oportunidade.</p>
+          <p>Buscamos pessoas comprometidas e dispostas a aproveitar ao máximo esse privilégio. Preencha seus dados com atenção.</p>
+          <div class="application-capacity"><span>100</span><p>cadeiras presenciais<br>em Alphaville</p></div>
+          <span class="button button-wide" aria-disabled="true">Garantir minha vaga</span>
+        </aside>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
       <a class="brand" href="#topo" aria-label="Voltar ao topo"><img src="../assets/images/logo.svg" alt="EscalaMED por X5 MED"></a>
-      <p>V2 — prova de direção visual</p>
       <span>© 2026 X5 MED</span>
     </div>
   </footer>
