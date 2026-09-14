@@ -2,12 +2,12 @@
 
 Landing page do evento EscalaMED migrada para Next.js 16, React 19 e TypeScript.
 
-## Rotas
+## Rota
 
-- `/` — versão principal.
-- `/v2` — segunda experiência visual preservada do projeto original.
+- `/` — página principal, baseada na V2 do projeto original.
+- `/v2` — redirecionamento permanente para `/` para preservar links existentes.
 
-As duas rotas são pré-renderizadas como conteúdo estático pelo Next.js. Menus responsivos, navegação suave, painéis de diagnóstico, carrosséis, vídeos, contadores e animações são inicializados pelo componente cliente `PageRuntime`.
+A página é pré-renderizada como conteúdo estático pelo Next.js. Menus responsivos, navegação suave, painéis de diagnóstico, carrosséis, vídeos, contadores e animações são inicializados pelo componente cliente `PageRuntime`.
 
 ## Desenvolvimento
 
@@ -28,4 +28,4 @@ O comando executa a validação de tipos e a compilação otimizada de produçã
 
 ## Candidatura
 
-O projeto original não possuía integração de formulário ou URL externa. Por isso, a versão principal mantém os CTAs direcionados à seção `#inscricao`, enquanto o botão final da V2 permanece desabilitado. Quando o destino de candidatura for definido, ele deve substituir esses pontos no conteúdo das páginas.
+O projeto original não possuía integração de formulário ou URL externa. Por isso, os CTAs direcionam para a seção `#inscricao` e o botão final permanece desabilitado. Quando o destino de candidatura for definido, ele deve substituir esses pontos no conteúdo da página.

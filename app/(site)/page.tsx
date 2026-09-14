@@ -1,12 +1,12 @@
 import { PageRuntime } from "@/components/PageRuntime";
 import { StaticPage } from "@/components/StaticPage";
-import { classicMarkup } from "@/content/classic";
+import { v2Markup } from "@/content/v2";
 
 export default function HomePage() {
   return (
     <>
-      <StaticPage markup={classicMarkup} />
-      <PageRuntime variant="classic" />
+      <StaticPage markup={v2Markup} />
+      <PageRuntime variant="v2" />
     </>
   );
 }
