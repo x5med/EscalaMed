@@ -1,33 +1,5 @@
-<!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>EscalaMED — A Rota do Crescimento</title>
-  <meta name="description" content="Um caminho prático para dobrar o faturamento da sua clínica, melhorar a lucratividade e construir o próximo nível do seu negócio.">
-  <meta name="theme-color" content="#020817">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="EscalaMED — A Rota do Crescimento">
-  <meta property="og:description" content="Evento presencial para médicos empresários donos de clínica, em Alphaville — São Paulo.">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:image" content="https://x5med.com.br/assets/images/opengraph.png">
-  <meta property="og:image:type" content="image/png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="EscalaMED">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://x5med.com.br/assets/images/opengraph.png">
-  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
-  <script src="assets/js/script.js" defer></script>
-</head>
-<body>
-  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+export const classicMarkup = String.raw`
+<a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
 
   <header class="site-header" id="topo">
     <div class="container nav-shell">
@@ -411,5 +383,4 @@
       <p>© 2026 X5 MED. Todos os direitos reservados.</p>
     </div>
   </footer>
-</body>
-</html>
+`;

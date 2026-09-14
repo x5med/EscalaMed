@@ -1,5 +1,13 @@
 .DS_Store
 
+# Next.js e dependências locais
+/node_modules/
+/.next/
+/out/
+*.tsbuildinfo
+.env*
+!.env.example
+
 # Backups e arquivos-fonte locais que não fazem parte da publicação.
 /!BACKUP/
 assets/images/bg.png

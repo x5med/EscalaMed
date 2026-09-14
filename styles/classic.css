@@ -138,7 +138,7 @@ strong { color: var(--text-primary); }
 .mobile-menu .button { margin-top: 18px; }
 
 .hero { position: relative; display: flex; min-height: max(100vh, 1040px); padding: var(--header-height) 0 0; flex-direction: column; overflow: hidden; background: var(--midnight); }
-.hero-mentor-art { position: absolute; z-index: 0; top: 0; right: 0; left: 0; height: min(920px, 48.1vw); min-height: 492px; background: url("../images/IMAGEM+HERO_6oLOTE.webp") center top / 100% auto no-repeat; transform-origin: center top; }
+.hero-mentor-art { position: absolute; z-index: 0; top: 0; right: 0; left: 0; height: min(920px, 48.1vw); min-height: 492px; background: url("/assets/images/IMAGEM+HERO_6oLOTE.webp") center top / 100% auto no-repeat; transform-origin: center top; }
 .hero-mentor-art::before { position: absolute; inset: 0; content: ""; background: linear-gradient(180deg, rgba(2,8,23,.16) 0%, transparent 32%, rgba(2,8,23,.08) 62%, var(--midnight) 100%); }
 .hero-layout { position: relative; z-index: 2; display: block; padding-top: clamp(430px, 23.5vw, 460px); padding-bottom: 96px; }
 .hero-copy { width: min(100%, 1120px); margin-inline: auto; text-align: center; }
@@ -235,7 +235,7 @@ strong { color: var(--text-primary); }
 .pillars { overflow: hidden; }
 .pillars::before { position: absolute; top: 0; right: -20%; width: 70vw; height: 70vw; content: ""; border-radius: 50%; background: radial-gradient(circle, rgba(244,181,64,.09), transparent 65%); pointer-events: none; }
 .pillars-grid { position: relative; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); grid-auto-flow: dense; gap: 16px; }
-.pillar-card { position: relative; isolation: isolate; display: flex; grid-column: span 7; min-height: 440px; padding: 38px 36px; overflow: hidden; border: 1px solid var(--border); border-radius: 30px; background: linear-gradient(180deg, rgba(2,8,23,.18), rgba(2,8,23,.94)), url("../images/route-grid.svg") center / cover, linear-gradient(145deg, rgba(7,81,143,.54), rgba(4,39,70,.74)); flex-direction: column; justify-content: flex-end; transition: transform .6s var(--ease), background-size .8s var(--ease), border-color .4s ease; }
+.pillar-card { position: relative; isolation: isolate; display: flex; grid-column: span 7; min-height: 440px; padding: 38px 36px; overflow: hidden; border: 1px solid var(--border); border-radius: 30px; background: linear-gradient(180deg, rgba(2,8,23,.18), rgba(2,8,23,.94)), url("/assets/images/route-grid.svg") center / cover, linear-gradient(145deg, rgba(7,81,143,.54), rgba(4,39,70,.74)); flex-direction: column; justify-content: flex-end; transition: transform .6s var(--ease), background-size .8s var(--ease), border-color .4s ease; }
 .pillar-card:nth-child(2), .pillar-card:nth-child(3) { grid-column: span 5; }
 .pillar-card::before { position: absolute; z-index: -1; inset: 0; content: ""; opacity: .26; background: repeating-linear-gradient(135deg, transparent 0 44px, rgba(33,158,240,.18) 44px 46px, transparent 46px 88px); transition: opacity .5s ease, transform .8s var(--ease); }
 .pillar-card::after { position: absolute; z-index: -1; right: -35%; bottom: -35%; width: 280px; height: 280px; content: ""; border-radius: 50%; background: var(--gold); filter: blur(100px); opacity: 0; transition: opacity .5s ease; }
