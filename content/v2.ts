@@ -317,8 +317,8 @@ export const v2Markup = String.raw`
           </aside>
 
           <div class="proof-turn-intro">
-            <h3><span>Dobrar o faturamento é o objetivo.</span><span>O caminho depende do gargalo.</span></h3>
-            <p>É essa experiência prática que levamos para o EscalaMED: entender o que a sua clínica precisa resolver agora para chegar ao próximo nível.<strong>O palco não é de onde vem nossa autoridade. A operação é.</strong></p>
+            <h3><span>Dobrar o <strong>faturamento</strong> é o objetivo.</span><span>O caminho depende do gargalo.</span></h3>
+            <p>É essa experiência prática que levamos para o EscalaMED: entender o que a sua clínica precisa resolver agora para chegar ao próximo nível.</p>
           </div>
 
           <article class="proof-turn">
