@@ -37,6 +37,13 @@ function listen(
 }
 
 function formatCounterValue(value: number, format: string, suffix = "") {
+  if (format === "decimal") {
+    return Number(value).toLocaleString("pt-BR", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+  }
+
   if (format === "compact") {
     if (value >= 1_000_000) {
       const amount = value / 1_000_000;
@@ -208,7 +215,10 @@ export function PageRuntime({ variant }: PageRuntimeProps) {
         if (!videoId) return;
         const player = document.createElement("iframe");
         player.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0`;
-        player.title = `Depoimento em vídeo ${index + 1}`;
+        player.title =
+          poster.dataset.playerTitle ||
+          poster.getAttribute("aria-label") ||
+          `Depoimento em vídeo ${index + 1}`;
         player.allow =
           "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
         player.referrerPolicy = "strict-origin-when-cross-origin";
@@ -540,7 +550,7 @@ export function PageRuntime({ variant }: PageRuntimeProps) {
         animateFrom(".journey-station", ".journey-track", { y: 42, opacity: 0, duration: 0.9, stagger: 0.12, ease: "power3.out" });
         animateFrom(".proof-step", ".case-timeline", { y: 36, opacity: 0, duration: 0.8, stagger: 0.09, ease: "power3.out" });
         animateFrom(".proof-metric", ".case-meter", { scale: 0.84, opacity: 0, duration: 1, stagger: 0.18, ease: "power3.out" });
-        animateFrom(".mentor-photo img", ".mentor-viewport", { scale: 0.82, opacity: 0.2, duration: 1.15, stagger: 0.1, ease: "power3.out" });
+        animateFrom(".mentor-photo img", ".mentor-viewport", { scale: 1.08, opacity: 0.35, duration: 1.15, stagger: 0.1, ease: "power3.out" });
         animateFrom(".authority-stat", ".authority-stats", { y: 42, opacity: 0, duration: 0.9, stagger: 0.1, ease: "power3.out" });
         const authorityWords = document.querySelectorAll(".authority-close .word");
         if (authorityWords.length) {

@@ -4,15 +4,15 @@ export const v2Markup = String.raw`
   <header class="site-header" id="topo">
     <div class="nav-shell">
       <a class="brand" href="#inicio" aria-label="EscalaMED — início">
-        <img src="../assets/images/logo.svg" alt="EscalaMED por X5 MED">
+        <img src="assets/images/logo.svg" alt="EscalaMED por X5 MED">
       </a>
 
       <nav class="desktop-nav" aria-label="Navegação principal">
-        <a href="#diagnostico">Diagnóstico</a>
-        <a href="#pilares">A Rota</a>
-        <a href="#publico">Para quem</a>
-        <a href="#experiencia">A Experiência</a>
-        <a href="#equipe">Mentores</a>
+        <a href="#diagnostico">DIAGNÓSTICO</a>
+        <a href="#pilares">A ROTA</a>
+        <a href="#publico">PARA QUEM</a>
+        <a href="#experiencia">A EXPERIÊNCIA</a>
+        <a href="#equipe">MENTORES</a>
       </nav>
 
       <a class="button button-small nav-cta" href="#inscricao">Garantir minha vaga</a>
@@ -136,7 +136,7 @@ export const v2Markup = String.raw`
       <div class="container pillars-layout">
         <div class="pillars-intro">
           <p class="kicker">Uma visão completa do negócio</p>
-          <h2>Os 4 Pilares <span class="inline-portraits" aria-hidden="true"><img src="../assets/images/img-fabio.webp" alt=""><img src="../assets/images/img-patricia.webp" alt=""><img src="../assets/images/img-vital.webp" alt=""></span> da Rota</h2>
+          <h2>Os 4 Pilares <span class="inline-portraits" aria-hidden="true"><img src="assets/images/img-fabio.webp" alt=""><img src="assets/images/img-patricia.webp" alt=""><img src="assets/images/img-vital.webp" alt=""><img src="assets/images/img-patricio.webp" alt=""><img src="assets/images/img-tainara.webp" alt=""></span> da Rota</h2>
           <p>Porque clínicas em momentos diferentes precisam de movimentos diferentes.</p>
           <div class="route-progress" aria-hidden="true"><span></span><i></i></div>
         </div>
@@ -300,21 +300,26 @@ export const v2Markup = String.raw`
 
         <div class="proof-bento">
           <article class="case-timeline">
-            <div class="proof-card-head"><span>Um case real, sem atalhos</span><i aria-hidden="true"></i></div>
+            <div class="proof-card-head"><span><span style="color: rgb(244, 181, 64);">Do zero a quase R$ 1 milhão por mês,</span> com gestão aplicada ao dia a dia da clínica.</span><i aria-hidden="true"></i></div>
             <ol>
-              <li class="proof-step"><span>01</span><p>Uma das clínicas construídas pelos sócios da X5 MED, em Manaus, <strong>saiu do zero e alcançou o patamar de aproximadamente R$ 1 milhão de faturamento mensal em cerca de um ano.</strong></p></li>
-              <li class="proof-step"><span>02</span><p>Naquele momento, Fábio e Patrícia estavam diretamente envolvidos na operação e nas vendas.</p></li>
-              <li class="proof-step"><span>03</span><p>O crescimento aconteceu. Mas revelou um novo gargalo.</p></li>
-              <li class="proof-step"><span>04</span><p>Quando os dois deixaram a linha de frente da operação, o faturamento recuou para a faixa de aproximadamente <strong>R$ 400 mil mensais.</strong></p></li>
+              <li class="proof-step"><span>01</span><p><strong><span style="color: rgb(244, 181, 64);">O Gargalo de cada Estágio</span></strong></br></br> Ao longo da jornada, o gargalo da empresa foi mudando. Cada novo estágio apresentava um novo desafio, e precisávamos entender o que a clínica precisava resolver naquele momento para continuar crescendo.</p></li>
+              <li class="proof-step"><span>02</span><p><strong><span style="color: rgb(244, 181, 64);">Melhorar a Atração e a Conversão de Pacientes</span></strong></br></br> Em determinados momentos, precisávamos melhorar a atração de pacientes. Em outros, o foco estava em vendas e conversão. O esforço acompanhava a necessidade da operação.</p></li>
+              <li class="proof-step"><span>03</span><p><strong><span style="color: rgb(244, 181, 64);">Criar Produtos e Desenvolver a Experiência</span></strong></br></br> Criamos novos produtos, trabalhamos a experiência dos pacientes e aumentamos o ticket. Essas frentes fizeram parte da construção do crescimento da clínica.</p></li>
+              <li class="proof-step"><span>04</span><p><strong><span style="color: rgb(244, 181, 64);">Desenvolver Pessoas e Estruturar Processos</span></strong></br></br> Desenvolvemos pessoas, estruturamos processos e encontramos novas oportunidades de expansão. A construção aconteceu na prática, com pacientes reais, equipe real e erros e acertos reais.</p></li>
             </ol>
           </article>
 
           <aside class="case-meter" aria-label="Comparação do faturamento mensal da clínica">
-            <div class="proof-card-head"><span>O crescimento revelou o gargalo</span><i aria-hidden="true"></i></div>
-            <div class="proof-metric proof-metric-high"><span>Com presença direta</span><strong><small>R$</small> <span data-counter data-value="1000000" data-format="compact">0</span></strong><p>por mês</p></div>
+            <div class="proof-card-head"><span>Nossa clínica em Manaus</span><i aria-hidden="true"></i></div>
+            <div class="proof-metric proof-metric-high"><span>Partimos do Zero</span><strong><small>R$</small> <span data-counter data-value="0" data-format="decimal">0,00</span></strong><span class="proof-metric-bridge">E chegamos a quase</span></div>
             <div class="meter-route" aria-hidden="true"><i></i><span></span><i></i></div>
-            <div class="proof-metric"><span>Sem a linha de frente</span><strong><small>R$</small> <span data-counter data-value="400000" data-format="compact">0</span></strong><p>por mês</p></div>
+            <div class="proof-metric proof-metric-finish"><strong><small>R$</small> <span data-counter data-value="1000000" data-format="compact">0</span></strong><p class="proof-metric-caption">De faturamento por mês em aproximadamente 1 ano.</p><p class="proof-metric-note">Uma trajetória com pacientes reais, equipe real, erros e acertos reais.</p></div>
           </aside>
+
+          <div class="proof-turn-intro">
+            <h3><span>Dobrar o faturamento é o objetivo.</span><span>O caminho depende do gargalo.</span></h3>
+            <p>É essa experiência prática que levamos para o EscalaMED: entender o que a sua clínica precisa resolver agora para chegar ao próximo nível.<strong>O palco não é de onde vem nossa autoridade. A operação é.</strong></p>
+          </div>
 
           <article class="proof-turn">
             <blockquote>O que leva uma clínica a um patamar <strong>não necessariamente é o que a sustenta nesse patamar.</strong></blockquote>
@@ -349,7 +354,7 @@ export const v2Markup = String.raw`
       <div class="container mentors-heading">
         <div>
           <p class="kicker">Quem está por trás dessa rota</p>
-          <h2>Experiência clínica <span class="inline-portraits" aria-hidden="true"><img src="../assets/images/img-fabio.webp" alt=""><img src="../assets/images/img-patricia.webp" alt=""><img src="../assets/images/img-vital.webp" alt=""></span> e visão empresarial na mesma mesa.</h2>
+          <h2>Experiência clínica <span class="inline-portraits" aria-hidden="true"><img src="assets/images/img-fabio.webp" alt=""><img src="assets/images/img-patricia.webp" alt=""><img src="assets/images/img-vital.webp" alt=""><img src="assets/images/img-patricio.webp" alt=""><img src="assets/images/img-tainara.webp" alt=""></span> e visão empresarial na mesma mesa.</h2>
         </div>
         <p>Uma equipe que conhece a medicina, a operação e as decisões necessárias para transformar uma clínica em um negócio sustentável.</p>
       </div>
@@ -365,7 +370,7 @@ export const v2Markup = String.raw`
       <div class="mentor-viewport" data-rail-viewport="mentors">
         <div class="mentor-track">
           <article class="mentor-card">
-            <div class="mentor-photo mentor-photo--fabio"><img src="../assets/images/img-fabio-mentor.webp" alt="Fábio Rodrigues" loading="lazy" decoding="async"></div>
+            <div class="mentor-photo mentor-photo--fabio"><img src="assets/images/img-fabio-mentor.webp" alt="Fábio Rodrigues" loading="lazy" decoding="async"></div>
             <div class="mentor-copy">
               <div><span>Cirurgia e gestão</span><h3>Fábio Rodrigues</h3><p class="mentor-role">Médico cirurgião, empresário e gestão.</p></div>
               <p>Formado em 2002, o Dr. Fábio tem duas residências, milhares de cirurgias bariátricas realizadas e cerca de oito anos de atuação como Diretor Clínico e Técnico de um grande hospital em Manaus.</p>
@@ -374,7 +379,7 @@ export const v2Markup = String.raw`
           </article>
 
           <article class="mentor-card">
-            <div class="mentor-photo"><img src="../assets/images/img-vital.webp" alt="Vital Araújo" loading="lazy" decoding="async"></div>
+            <div class="mentor-photo"><img src="assets/images/img-vital.webp" alt="Vital Araújo" loading="lazy" decoding="async"></div>
             <div class="mentor-copy">
               <div><span>Liderança médica</span><h3>Vital Araújo</h3><p class="mentor-role">Médico Empresário</p></div>
               <p>Formado muito jovem pela UFBA, tornou-se Diretor Médico de um hospital regional aos 24 anos. Especializou-se na área integrativa, ortomolecular e emagrecimento e tornou-se referência nacional.</p>
@@ -383,7 +388,7 @@ export const v2Markup = String.raw`
           </article>
 
           <article class="mentor-card">
-            <div class="mentor-photo"><img src="../assets/images/img-patricia.webp" alt="Patrícia Santiago" loading="lazy" decoding="async"></div>
+            <div class="mentor-photo"><img src="assets/images/img-patricia.webp" alt="Patrícia Santiago" loading="lazy" decoding="async"></div>
             <div class="mentor-copy">
               <div><span>Gestão à distância</span><h3>Patrícia Santiago</h3><p class="mentor-role">Médica, Empresária e Case de Sucesso em Gestão à Distância</p></div>
               <p>A Dra. Patrícia viveu durante anos a exaustão dos plantões e a falta de tempo com a família. A virada aconteceu ao compreender que precisava mudar sua mentalidade de médica técnica para gestora.</p>
@@ -392,7 +397,7 @@ export const v2Markup = String.raw`
           </article>
 
           <article class="mentor-card">
-            <div class="mentor-photo"><img src="../assets/images/img-patricio.webp" alt="Patrício Darvisson" loading="lazy" decoding="async"></div>
+            <div class="mentor-photo"><img src="assets/images/img-patricio.webp" alt="Patrício Darvisson" loading="lazy" decoding="async"></div>
             <div class="mentor-copy">
               <div><span>Estratégia de negócios</span><h3>Patrício Darvisson</h3><p class="mentor-role">Estrategista de Negócios e Especialista em Crescimento Exponencial</p></div>
               <p>Empresário há 20 anos, especialista em Marketing e estrategista de negócios com experiência no comando e estruturação de mais de 30 empresas.</p>
@@ -401,7 +406,7 @@ export const v2Markup = String.raw`
           </article>
 
           <article class="mentor-card">
-            <div class="mentor-photo"><img src="../assets/images/img-tainara.webp" alt="Tainara Carvalho" loading="lazy" decoding="async"></div>
+            <div class="mentor-photo"><img src="assets/images/img-tainara.webp" alt="Tainara Carvalho" loading="lazy" decoding="async"></div>
             <div class="mentor-copy">
               <div><span>Medicina particular</span><h3>Tainara Carvalho</h3><p class="mentor-role">Médica Dermatologista, Empresária e Co-idealizadora da X5 Med</p></div>
               <p>Formada em Medicina pela UFBA, foi a primeira médica de sua família. Atua no mercado particular na área de Dermatologia.</p>
@@ -429,10 +434,21 @@ export const v2Markup = String.raw`
 
         <div class="testimonials-heading">
           <div><p class="kicker">Experiências de quem já passou pela rota</p><h3>Resultados contados por quem viveu o processo.</h3></div>
-          <div class="rail-controls" data-rail-controls="testimonials">
-            <button type="button" data-rail-prev aria-label="Ver depoimento anterior" disabled><span aria-hidden="true">←</span></button>
-            <button type="button" data-rail-next aria-label="Ver próximo depoimento"><span aria-hidden="true">→</span></button>
+        </div>
+
+        <article class="featured-testimonial">
+          <div class="featured-testimonial-media">
+            <button class="video-poster featured-video-poster" type="button" data-youtube-id="Czgzqz6gcAE" data-player-title="Depoimento de Meuze" aria-label="Reproduzir depoimento de Meuze">
+              <img src="assets/images/capa-meuze.webp" alt="" loading="lazy">
+              <i aria-hidden="true"></i>
+            </button>
           </div>
+          <blockquote>Meuze faturava <strong>R$ 100 mil</strong> e, há pouco menos de 1 ano, já fatura <em>R$ meio milhão</em></blockquote>
+        </article>
+
+        <div class="rail-controls testimonials-controls" data-rail-controls="testimonials">
+          <button type="button" data-rail-prev aria-label="Ver depoimento anterior" disabled><span aria-hidden="true">←</span></button>
+          <button type="button" data-rail-next aria-label="Ver próximo depoimento"><span aria-hidden="true">→</span></button>
         </div>
 
         <div class="video-viewport" data-rail-viewport="testimonials" aria-label="Depoimentos em vídeo">
@@ -481,7 +497,7 @@ export const v2Markup = String.raw`
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a class="brand" href="#topo" aria-label="Voltar ao topo"><img src="../assets/images/logo.svg" alt="EscalaMED por X5 MED"></a>
+      <a class="brand" href="#topo" aria-label="Voltar ao topo"><img src="assets/images/logo.svg" alt="EscalaMED por X5 MED"></a>
       <span>© 2026 X5 MED</span>
     </div>
   </footer>
