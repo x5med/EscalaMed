@@ -5,7 +5,7 @@ const description =
   "Um caminho prático para dobrar o faturamento da sua clínica, melhorar a lucratividade e construir o próximo nível do seu negócio.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://x5med.com.br"),
+  metadataBase: new URL("https://escalamed.x5med.com.br"),
   title: "EscalaMED — A Rota do Crescimento",
   description,
   icons: { icon: "/assets/images/favicon.svg" },
