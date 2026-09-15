@@ -209,25 +209,157 @@ export function PageRuntime({ variant }: PageRuntimeProps) {
       if (viewport && previous && next) configureRail(viewport, previous, next);
     }
 
+    const supportsVideoPreview = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    let stopActiveVideo: Cleanup | undefined;
+
+    const sendPlayerCommand = (player: HTMLIFrameElement, command: string) => {
+      player.contentWindow?.postMessage(
+        JSON.stringify({ event: "command", func: command, args: [] }),
+        "*",
+      );
+    };
+
     document.querySelectorAll<HTMLButtonElement>(".video-poster").forEach((poster, index) => {
-      const playVideo = () => {
-        const videoId = poster.dataset.youtubeId;
-        if (!videoId) return;
+      const videoId = poster.dataset.youtubeId;
+      if (!videoId) return;
+
+      const title =
+        poster.dataset.playerTitle ||
+        poster.getAttribute("aria-label") ||
+        `Depoimento em vídeo ${index + 1}`;
+      let previewPlayer: HTMLIFrameElement | undefined;
+      let previewTimer = 0;
+
+      const createPlayer = (loop: boolean) => {
+        const params = new URLSearchParams({
+          autoplay: "1",
+          mute: "1",
+          controls: "0",
+          playsinline: "1",
+          rel: "0",
+          modestbranding: "1",
+          iv_load_policy: "3",
+          disablekb: "1",
+          fs: "0",
+          cc_load_policy: "0",
+          enablejsapi: "1",
+          origin: window.location.origin,
+        });
+
+        if (loop) {
+          params.set("loop", "1");
+          params.set("playlist", videoId);
+        }
+
         const player = document.createElement("iframe");
-        player.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&playsinline=1&rel=0`;
-        player.title =
-          poster.dataset.playerTitle ||
-          poster.getAttribute("aria-label") ||
-          `Depoimento em vídeo ${index + 1}`;
+        player.src = `https://www.youtube-nocookie.com/embed/${videoId}?${params.toString()}`;
+        player.title = title;
+        player.className = "video-embed-frame";
         player.allow =
           "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
         player.referrerPolicy = "strict-origin-when-cross-origin";
-        player.setAttribute("allowfullscreen", "");
-        poster.replaceWith(player);
-        player.focus();
+        player.tabIndex = -1;
+        return player;
       };
-      cleanups.push(listen(poster, "click", playVideo));
+
+      const stopPreview = () => {
+        window.clearTimeout(previewTimer);
+        previewTimer = 0;
+        poster.classList.remove("is-previewing");
+        previewPlayer?.remove();
+        previewPlayer = undefined;
+      };
+
+      const startPreview = () => {
+        if (!supportsVideoPreview || reducedMotion || previewPlayer || stopActiveVideo) return;
+        window.clearTimeout(previewTimer);
+        previewTimer = window.setTimeout(() => {
+          const player = createPlayer(true);
+          previewPlayer = player;
+          player.classList.add("video-hover-preview");
+          player.setAttribute("aria-hidden", "true");
+          poster.append(player);
+          window.requestAnimationFrame(() => {
+            if (previewPlayer === player) poster.classList.add("is-previewing");
+          });
+        }, 120);
+      };
+
+      const openCustomPlayer = () => {
+        stopPreview();
+        stopActiveVideo?.();
+
+        const shell = document.createElement("div");
+        shell.className = "video-player-shell";
+        shell.setAttribute("aria-label", title);
+
+        const player = createPlayer(false);
+        const hitArea = document.createElement("button");
+        const controls = document.createElement("div");
+        const playToggle = document.createElement("button");
+        const soundToggle = document.createElement("button");
+        const closeButton = document.createElement("button");
+        let playing = true;
+        let muted = true;
+
+        hitArea.type = "button";
+        hitArea.className = "video-player-hitarea";
+        hitArea.setAttribute("aria-label", "Pausar vídeo");
+        controls.className = "video-player-controls";
+        playToggle.type = "button";
+        soundToggle.type = "button";
+        closeButton.type = "button";
+        playToggle.textContent = "Pausar";
+        soundToggle.textContent = "Ativar som";
+        closeButton.textContent = "Fechar";
+        playToggle.setAttribute("aria-label", "Pausar vídeo");
+        soundToggle.setAttribute("aria-label", "Ativar som do vídeo");
+        closeButton.setAttribute("aria-label", "Fechar vídeo");
+
+        const togglePlayback = () => {
+          playing = !playing;
+          sendPlayerCommand(player, playing ? "playVideo" : "pauseVideo");
+          playToggle.textContent = playing ? "Pausar" : "Reproduzir";
+          playToggle.setAttribute("aria-label", playing ? "Pausar vídeo" : "Reproduzir vídeo");
+          hitArea.setAttribute("aria-label", playing ? "Pausar vídeo" : "Reproduzir vídeo");
+          shell.classList.toggle("is-paused", !playing);
+        };
+
+        const toggleSound = () => {
+          muted = !muted;
+          sendPlayerCommand(player, muted ? "mute" : "unMute");
+          soundToggle.textContent = muted ? "Ativar som" : "Silenciar";
+          soundToggle.setAttribute(
+            "aria-label",
+            muted ? "Ativar som do vídeo" : "Silenciar vídeo",
+          );
+          shell.classList.toggle("has-sound", !muted);
+        };
+
+        const closePlayer = () => {
+          shell.replaceWith(poster);
+          stopActiveVideo = undefined;
+          poster.focus();
+        };
+
+        hitArea.addEventListener("click", togglePlayback);
+        playToggle.addEventListener("click", togglePlayback);
+        soundToggle.addEventListener("click", toggleSound);
+        closeButton.addEventListener("click", closePlayer);
+        controls.append(playToggle, soundToggle, closeButton);
+        shell.append(player, hitArea, controls);
+        poster.replaceWith(shell);
+        stopActiveVideo = closePlayer;
+        soundToggle.focus();
+      };
+
+      cleanups.push(listen(poster, "mouseenter", startPreview));
+      cleanups.push(listen(poster, "mouseleave", stopPreview));
+      cleanups.push(listen(poster, "click", openCustomPlayer));
+      cleanups.push(stopPreview);
     });
+
+    cleanups.push(() => stopActiveVideo?.());
 
     const revealElements = document.querySelectorAll<HTMLElement>(".reveal");
     if (variant === "classic") {
