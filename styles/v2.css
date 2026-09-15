@@ -318,7 +318,7 @@ h1, h2, h3, h4, p { margin-top: 0; }
   .case-meter .meter-route { height: auto; min-height: 180px; margin: 32px 0; flex: 1 1 180px; }
   .case-meter .proof-metric-finish { margin-top: 0; }
 }
-.proof-turn-intro { margin-top: 200px; grid-column: 1 / -1; text-align: center; }
+.proof-turn-intro { margin-top: 100px; grid-column: 1 / -1; text-align: center; }
 .proof-turn-intro h3 { max-width: 1320px; margin: 0 auto; font-family: var(--display); font-size: clamp(3.2rem, 4vw, 4.8rem); font-weight: 500; letter-spacing: -.05em; line-height: 1.02; text-transform: uppercase; }
 .proof-turn-intro h3 span { display: block; margin-inline: auto; }
 .proof-turn-intro h3 span:first-child { width: min(100%, 1000px); }
@@ -559,7 +559,7 @@ h1, h2, h3, h4, p { margin-top: 0; }
   .case-timeline, .case-meter, .proof-turn { grid-column: 1; contain: layout paint; }
   .case-meter { min-height: 600px; }
   .proof-turn { grid-template-columns: 1fr; gap: 50px; }
-  .proof-turn-intro { margin-top: 130px; }
+  .proof-turn-intro { margin-top: 85px; }
   .proof-turn-intro h3 { font-size: clamp(3rem, 8vw, 4.8rem); }
   .proof-turn-intro p { margin-bottom: 54px; }
   .operation-manifest { margin-top: 130px; text-align: left; }
@@ -675,7 +675,7 @@ h1, h2, h3, h4, p { margin-top: 0; }
   .proof-turn { gap: 40px; }
   .proof-turn blockquote { font-size: 30px; }
   .proof-construction > p { font-size: 15px; }
-  .proof-turn-intro { margin-top: 105px; }
+  .proof-turn-intro { margin-top: 70px; }
   .proof-turn-intro { text-align: center; }
   .proof-turn-intro h3 { font-size: 42px; }
   .proof-turn-intro p { margin: 30px auto 44px; font-size: 16px; }
