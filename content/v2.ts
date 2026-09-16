@@ -15,7 +15,7 @@ export const v2Markup = String.raw`
         <a href="#equipe">MENTORES</a>
       </nav>
 
-      <a class="button button-small nav-cta" href="#inscricao">Garantir minha vaga</a>
+      <a class="button button-small nav-cta" href="https://formulario-escalamed.x5med.com.br/">Garantir minha vaga</a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu">
         <span></span><span></span>
       </button>
@@ -28,7 +28,7 @@ export const v2Markup = String.raw`
         <a href="#publico">Para quem</a>
         <a href="#experiencia">A Experiência</a>
         <a href="#equipe">Mentores</a>
-        <a class="button" href="#inscricao">Garantir minha vaga</a>
+        <a class="button" href="https://formulario-escalamed.x5med.com.br/">Garantir minha vaga</a>
       </nav>
     </div>
   </header>
@@ -45,7 +45,7 @@ export const v2Markup = String.raw`
         </div>
 
         <div class="hero-actions" aria-label="Ações principais">
-          <a class="button" href="#inscricao">Garantir minha vaga</a>
+          <a class="button" href="https://formulario-escalamed.x5med.com.br/">Garantir minha vaga</a>
           <a class="button button-ghost" href="#diagnostico">Descobrir meu gargalo</a>
         </div>
       </div>
@@ -472,7 +472,7 @@ export const v2Markup = String.raw`
         <p class="kicker">Primeiro, o diagnóstico. Depois, a rota.</p>
         <h2>Dobrar o faturamento é o objetivo. O caminho depende do gargalo.</h2>
         <p>Essa é a tese central do EscalaMED — A Rota do Crescimento.</p>
-        <a class="button" href="#inscricao">Quero garantir minha vaga</a>
+        <a class="button" href="https://formulario-escalamed.x5med.com.br/">Quero garantir minha vaga</a>
       </div>
     </section>
 
@@ -489,7 +489,7 @@ export const v2Markup = String.raw`
           <p>Caso o seu perfil seja aprovado, você receberá um convite exclusivo e intransferível para ter acesso à oportunidade.</p>
           <p>Buscamos pessoas comprometidas e dispostas a aproveitar ao máximo esse privilégio.</p>
           <div class="application-capacity"><span>100</span><p>cadeiras presenciais<br>em Alphaville</p></div>
-          <span class="button button-wide" aria-disabled="true">Garantir minha vaga</span>
+          <a class="button button-wide" href="https://formulario-escalamed.x5med.com.br/">Garantir minha vaga</a>
         </aside>
       </div>
     </section>
