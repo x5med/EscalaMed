@@ -576,7 +576,7 @@ export function PageRuntime({ variant }: PageRuntimeProps) {
 
         if (mobileMotionLite) {
           gsap.fromTo(".hero-art", { opacity: 0.82 }, { opacity: 1, duration: 0.85 });
-          gsap.from(".hero-copy > *, .hero-actions .button", {
+          gsap.from(".hero-copy > *, .hero-date, .hero-actions .button", {
             y: 22,
             opacity: 0,
             duration: 0.65,
@@ -600,7 +600,7 @@ export function PageRuntime({ variant }: PageRuntimeProps) {
           delay: 0.35,
           ease: "power3.out",
         });
-        gsap.from(".hero-actions .button", {
+        gsap.from(".hero-date, .hero-actions .button", {
           y: 30,
           opacity: 0,
           duration: 0.9,

@@ -44,9 +44,17 @@ export const v2Markup = String.raw`
           <p>Um caminho prático para dobrar o faturamento da sua clínica, melhorar a lucratividade e construir o próximo nível do seu negócio.</p>
         </div>
 
-        <div class="hero-actions" aria-label="Ações principais">
-          <a class="button" href="https://formulario-escalamed.x5med.com.br/">Garantir minha vaga</a>
-          <a class="button button-ghost" href="#diagnostico">Descobrir meu gargalo</a>
+        <div class="hero-side">
+          <div class="hero-date">
+            <span class="hero-date-label">Data do encontro presencial</span>
+            <strong>27, 28 e 29</strong>
+            <span class="hero-date-month">de novembro</span>
+            <span class="hero-date-location">Alphaville — São Paulo</span>
+          </div>
+          <div class="hero-actions" aria-label="Ações principais">
+            <a class="button" href="https://formulario-escalamed.x5med.com.br/">Garantir minha vaga</a>
+            <a class="button button-ghost" href="#diagnostico">Descobrir meu gargalo</a>
+          </div>
         </div>
       </div>
 
