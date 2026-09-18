@@ -50,6 +50,10 @@ export const v2Markup = String.raw`
             <strong>27, 28 e 29</strong>
             <span class="hero-date-month">de novembro</span>
             <span class="hero-date-location">Alphaville — São Paulo</span>
+            <div class="hero-investment">
+              <span>Investimento para participar</span>
+              <strong>R$ 2.497</strong>
+            </div>
           </div>
           <div class="hero-actions" aria-label="Ações principais">
             <a class="button" href="https://formulario-escalamed.x5med.com.br/">Garantir minha vaga</a>
@@ -497,6 +501,7 @@ export const v2Markup = String.raw`
           <p>Caso o seu perfil seja aprovado, você receberá um convite exclusivo e intransferível para ter acesso à oportunidade.</p>
           <p>Buscamos pessoas comprometidas e dispostas a aproveitar ao máximo esse privilégio.</p>
           <div class="application-capacity"><span>100</span><p>cadeiras presenciais<br>em Alphaville</p></div>
+          <div class="application-investment"><span>Investimento para participar</span><strong>R$ 2.497</strong></div>
           <a class="button button-wide" href="https://formulario-escalamed.x5med.com.br/">Garantir minha vaga</a>
         </aside>
       </div>
