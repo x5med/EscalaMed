@@ -153,6 +153,25 @@ h1, h2, h3, h4, p { margin-top: 0; }
 .event-marquee span { padding: 22px 38px; color: var(--white); font-size: .72rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; white-space: nowrap; }
 .event-marquee i { width: 5px; height: 5px; flex: 0 0 5px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 16px rgba(244,181,64,.7); }
 
+.location-section { background: radial-gradient(circle at 15% 80%, rgba(7,81,143,.18), transparent 38%), var(--ink); }
+.location-heading { max-width: 850px; margin: 0 auto 58px; text-align: center; }
+.location-heading h2 { margin: 0; font-family: var(--display); font-size: clamp(2.8rem, 4.6vw, 5.2rem); font-weight: 500; letter-spacing: -.05em; line-height: 1.06; }
+.location-heading h2 em { color: var(--gold); font-style: normal; }
+.location-heading > p:last-child { max-width: 670px; margin: 24px auto 0; color: #b9cbd5; font-size: 19px; line-height: 1.55; }
+.location-grid { display: grid; grid-template-columns: 1.1fr .9fr; align-items: stretch; gap: 20px; }
+.location-map { min-height: 450px; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius); background: #e9eef0; }
+.location-map iframe { display: block; width: 100%; height: 100%; min-height: 450px; border: 0; }
+.location-card { display: flex; padding: clamp(28px, 3.4vw, 48px); flex-direction: column; border: 1px solid var(--line-strong); border-radius: var(--radius); background: linear-gradient(150deg, rgba(4,39,70,.86), rgba(2,8,23,.98)); }
+.location-card-label { margin: 0 0 14px; color: var(--gold); font-size: .72rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; }
+.location-card h3 { margin: 0 0 22px; font-family: var(--display); font-size: clamp(1.8rem, 2.6vw, 2.8rem); font-weight: 500; letter-spacing: -.045em; line-height: 1.08; }
+.location-card h3 span { display: block; color: var(--gold); }
+.location-card address { color: #d7e3e9; font-size: 17px; font-style: normal; line-height: 1.55; }
+.location-benefits { display: grid; margin: 26px 0 30px; padding: 24px 0 0; border-top: 1px solid var(--line); gap: 12px; list-style: none; }
+.location-benefits li { position: relative; padding-left: 24px; color: #d7e3e9; font-size: 15px; line-height: 1.4; }
+.location-benefits li::before { position: absolute; top: .45em; left: 0; width: 9px; height: 9px; content: ""; border-radius: 50%; background: var(--gold); box-shadow: 0 0 12px rgba(244,181,64,.45); }
+.location-directions { width: fit-content; margin-top: auto; }
+.location-directions::after { margin-left: 10px; content: "↗"; font-size: 1.2em; line-height: 1; }
+
 .kicker { margin-bottom: 24px; color: var(--gold); font-size: .76rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
 .section-intro h2, .pillars-intro h2, .chapter-cta h2 { margin: 0; font-family: var(--display); font-weight: 500; letter-spacing: -.045em; line-height: 1.02; }
 .diagnosis { background: radial-gradient(circle at 75% 18%, rgba(7,81,143,.2), transparent 30%), var(--ink); }
@@ -518,6 +537,8 @@ h1, h2, h3, h4, p { margin-top: 0; }
   .hero h1 { font-size: clamp(3.8rem, 11vw, 6rem); }
   .hero-copy p { font-size: 18px; }
   .scroll-cue { display: none; }
+  .location-grid { grid-template-columns: 1fr; }
+  .location-map, .location-map iframe { min-height: 390px; }
   .diagnosis-intro { margin-bottom: 66px; }
   .diagnosis-accordion { display: grid; height: auto; grid-template-columns: 1fr; gap: 12px; }
   .diagnosis-panel, .diagnosis-panel.is-active { min-height: 112px; contain: layout paint; flex: none; backface-visibility: hidden; transition: min-height .5s var(--ease), border-color .3s ease; transform: translateZ(0); }
@@ -618,6 +639,16 @@ h1, h2, h3, h4, p { margin-top: 0; }
   .hero-actions { flex-direction: column; }
   .hero-actions .button { width: 100%; }
   .event-marquee span { padding: 18px 24px; font-size: .65rem; }
+  .location-heading { margin-bottom: 36px; text-align: left; }
+  .location-heading h2 { font-size: clamp(2.45rem, 10vw, 3.4rem); }
+  .location-heading > p:last-child { margin-top: 20px; font-size: 16px; }
+  .location-grid { gap: 16px; }
+  .location-map, .location-map iframe { min-height: 300px; border-radius: 24px; }
+  .location-card { padding: 28px 24px; border-radius: 24px; }
+  .location-card h3 { font-size: 2rem; }
+  .location-card address { font-size: 16px; }
+  .location-benefits li { font-size: 14px; }
+  .location-directions { width: 100%; padding-inline: 18px; font-size: .72rem; }
   .section { padding: 105px 0; }
   .kicker { margin-bottom: 18px; font-size: .65rem; }
   .diagnosis::before { height: 70px; }

@@ -8,6 +8,7 @@ export const v2Markup = String.raw`
       </a>
 
       <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#localizacao">LOCALIZAÇÃO</a>
         <a href="#diagnostico">DIAGNÓSTICO</a>
         <a href="#pilares">A ROTA</a>
         <a href="#publico">PARA QUEM</a>
@@ -23,6 +24,7 @@ export const v2Markup = String.raw`
 
     <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
       <nav aria-label="Navegação mobile">
+        <a href="#localizacao">Localização</a>
         <a href="#diagnostico">Diagnóstico</a>
         <a href="#pilares">A Rota</a>
         <a href="#publico">Para quem</a>
@@ -62,8 +64,8 @@ export const v2Markup = String.raw`
         </div>
       </div>
 
-      <a class="scroll-cue" href="#diagnostico" aria-label="Continuar para o diagnóstico">
-        <span>Role para descobrir a rota</span><i></i>
+      <a class="scroll-cue" href="#localizacao" aria-label="Continuar para a localização do evento">
+        <span>Conheça o local do encontro</span><i></i>
       </a>
     </section>
 
@@ -73,6 +75,33 @@ export const v2Markup = String.raw`
         <span aria-hidden="true">27, 28 e 29 de novembro</span><i aria-hidden="true"></i><span aria-hidden="true">Alphaville — São Paulo</span><i aria-hidden="true"></i><span aria-hidden="true">100 vagas presenciais</span><i aria-hidden="true"></i><span aria-hidden="true">Convite exclusivo</span><i aria-hidden="true"></i>
       </div>
     </div>
+
+    <section class="location-section section" id="localizacao" aria-labelledby="location-heading">
+      <div class="container">
+        <div class="location-heading">
+          <p class="kicker">Localização do evento</p>
+          <h2 id="location-heading">Nos vemos no coração de <em>Alphaville.</em></h2>
+          <p>O EscalaMED acontece no Star Eventos Alphaville, em um endereço de fácil acesso para você aproveitar os três dias de encontro presencial.</p>
+        </div>
+
+        <div class="location-grid">
+          <div class="location-map">
+            <iframe title="Mapa do Star Eventos Alphaville na Alameda Madeira, 222" src="https://maps.google.com/maps?iwloc=near&amp;output=embed&amp;q=Alameda+Madeira%2C+222%2C+ALPHAVILLE&amp;t=m&amp;z=13" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          </div>
+          <div class="location-card">
+            <p class="location-card-label">Onde será o EscalaMED</p>
+            <h3>Star Eventos <span>Alphaville</span></h3>
+            <address>Alameda Madeira, 222<br>Edifício Alfacon, salas 21 e 22<br>Alphaville, Barueri — SP</address>
+            <ul class="location-benefits">
+              <li>Em frente ao Centro Comercial Alphaville</li>
+              <li>Hotéis, restaurantes e serviços nas proximidades</li>
+              <li>Fácil acesso para chegar ao encontro</li>
+            </ul>
+            <a class="button location-directions" href="https://www.google.com/maps/dir/?api=1&amp;destination=Alameda+Madeira%2C+222%2C+Alphaville%2C+Barueri%2C+SP" target="_blank" rel="noopener noreferrer" aria-label="Traçar rota para o Star Eventos Alphaville no Google Maps">Traçar rota no Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <section class="diagnosis section" id="diagnostico">
       <div class="container">
