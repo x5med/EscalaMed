@@ -485,7 +485,7 @@ export const v2Markup = String.raw`
       <div class="container application-grid">
         <div class="application-copy">
           <p class="kicker">Candidatura EscalaMED</p>
-          <h2>Candidate-se para uma <em>Vaga Exclusiva</em></h2>
+          <h2>Inscreva-se para uma <em>Vaga Exclusiva</em></h2>
         </div>
         <aside class="application-panel" aria-label="Processo de candidatura">
           <p class="application-kicker">Convite exclusivo e intransferível</p>
